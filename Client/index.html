@@ -4,11 +4,40 @@
     <meta charset="utf-8">
     <title>נלחמים בקורונה</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Labs', 'In-Progress', 'Failed', 'Passed'],
+          ['Chen', 1000, 400, 200],
+          ['Dan', 1170, 460, 250],
+          ['Idan', 660, 1120, 300],
+          ['Nir', 1030, 540, 350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Corona vaccine labs',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    
 </head>
 
 <body dir="rtl">
     <h1>נלחמים בקורונה</h1>
     <img src="pictures/a75cb94f-4df7-4b96-8de1-4e31aa399a0d.jfif">
     <img src="pictures/93d8211e-dfa3-4d50-b143-c9c7c1bfa700.jfif">
+    <div id="columnchart_material" class="labs"></div>
 </body>
 </html>
