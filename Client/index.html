@@ -12,26 +12,24 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Labs', 'In-Progress', 'Failed', 'Passed'],
-          ['Chen', 1000, 400, 200],
-          ['Dan', 1170, 460, 250],
-          ['Idan', 660, 1120, 300],
-          ['Nir', 1030, 540, 350]
+          ['Labs', 'Status'],
+          ['Chen', "In Progress"],
+          ['Dan', "Passed"],
+          ['Idan', "Failed"],
+          ['Nir', "Passed"]
         ]);
 
         var options = {
           chart: {
             title: 'Corona vaccine labs',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
           }
         };
 
         var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
         chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
+      }      
     </script>
-    
 </head>
 
 <body dir="rtl">
