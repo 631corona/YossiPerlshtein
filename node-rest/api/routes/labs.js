@@ -7,7 +7,8 @@ router.get('/', (req, res, next)=>{
         status: req.body.status
     }
     res.status(200).json({
-        message: 'Get to Labs route'
+        message: 'Get to Labs route',
+        lab: status
     })
 });
 
